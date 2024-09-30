@@ -55,7 +55,7 @@ const UserForm = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/users',
+        'https://language-school-form.vercel.app/api/users',
         values
       );
       console.log('Response:', response.data);
