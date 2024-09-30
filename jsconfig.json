@@ -4,5 +4,5 @@
     "module": "CommonJS",
     "checkJs": true
   },
-  "include": ["server.js"]
+  "include": ["src/pages/api/users.js"]
 }

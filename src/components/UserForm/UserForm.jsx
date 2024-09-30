@@ -8,16 +8,27 @@ import { useState } from 'react';
 import axios from 'axios';
 
 // Валидация с помощью Yup
+// const validationSchema = Yup.object({
+//   name: Yup.string().required('Name is required'),
+//   number: Yup.string()
+//     .matches(
+//       /^\+\d{10,15}$/,
+//       'Phone number must start with "+" and contain 10-15 digits'
+//     )
+//     .required('Phone number is required'),
+//   email: Yup.string().email('Invalid email').required('Email is required'),
+//   language: Yup.string().required('Please select a language'),
+// });
+
 const validationSchema = Yup.object({
-  name: Yup.string().required('Name is required'),
+  name: Yup.string(),
   number: Yup.string()
     .matches(
       /^\+\d{10,15}$/,
       'Phone number must start with "+" and contain 10-15 digits'
-    )
-    .required('Phone number is required'),
-  email: Yup.string().email('Invalid email').required('Email is required'),
-  language: Yup.string().required('Please select a language'),
+    ),
+  email: Yup.string().email('Invalid email'),
+  language: Yup.string(),
 });
 
 const UserForm = () => {
