@@ -1,48 +1,43 @@
-import express from 'express';
 import mongoose from 'mongoose';
-import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+// Обработчик API
+const handler = async (req, res) => {
+  if (req.method === 'POST') {
+    const { name, email, language, phone, message } = req.body;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+    try {
+      // Подключение к MongoDB
+      await mongoose.connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
 
-// MongoDB connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(error => console.error('MongoDB connection error:', error));
+      // Модель данных
+      const UserSchema = new mongoose.Schema({
+        name: String,
+        email: String,
+        language: String,
+        phone: Number,
+        message: String,
+      });
 
-// Model for data
-const UserSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  language: String,
-  phone: Number,
-  message: String,
-});
+      const User = mongoose.model('User', UserSchema);
 
-const User = mongoose.model('User', UserSchema);
+      const newUser = new User({ name, email, language, phone, message });
+      await newUser.save();
 
-// Route for data delivery
-app.post('/api/users', async (req, res) => {
-  const { name, email, language, phone, message } = req.body;
-
-  try {
-    const newUser = new User({ name, email, language, phone, message });
-    await newUser.save();
-    res.status(201).json({ message: 'User data saved successfully' });
-  } catch (error) {
-    res.status(500).json({ message: 'Error saving user data', error });
+      res.status(201).json({ message: 'User data saved successfully' });
+    } catch (error) {
+      res.status(500).json({ message: 'Error saving user data', error });
+    }
+  } else {
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
-});
+};
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Экспорт обработчика
+export default handler;

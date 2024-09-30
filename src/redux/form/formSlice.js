@@ -6,7 +6,10 @@ export const submitForm = createAsyncThunk(
   'form/submitForm',
   async (formData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('/api/users', formData);
+      const response = await axios.post(
+        'https://language-school-form.vercel.app/api/users',
+        formData
+      );
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data || 'Ошибка при отправке данных');
