@@ -9,9 +9,7 @@ export const submitForm = createAsyncThunk(
       const response = await axios.post('/api/users', formData);
       return response.data;
     } catch (error) {
-      return rejectWithValue(
-        error.response.data || 'Ошибка при отправке данных'
-      );
+      return rejectWithValue(error.response.data || 'Ошибка при отправке данных');
     }
   }
 );
@@ -24,6 +22,9 @@ const formSlice = createSlice({
     error: null,
   },
   reducers: {
+    showForm(state) {
+      state.submitted = true;
+    },
     hideForm(state) {
       state.submitted = false;
     },
@@ -48,3 +49,4 @@ const formSlice = createSlice({
 export const { hideForm } = formSlice.actions;
 
 export default formSlice.reducer;
+
