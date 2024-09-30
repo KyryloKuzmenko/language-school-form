@@ -1,0 +1,162 @@
+.linkJoinUs {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #96bb7c;
+}
+
+.heroTitle {
+  margin-top: 15px;
+  line-height: 1.37931;
+  color: #252b42;
+  font-weight: 700;
+  font-size: 29px;
+}
+
+.bground {
+  z-index: -1;
+  position: absolute;
+}
+
+.heroPictureContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  margin-top: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #737373;
+}
+
+.btnWrap {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.joinUs {
+  line-height: 1.57143;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #fff;
+  background: #96bb7c;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 20px;
+}
+
+.learnMore {
+  line-height: 1.57143;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #96bb7c;
+  background: #ffffff;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 7px 20px;
+}
+
+.heroPictureWrap {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .heroSection {
+    display: flex;
+    justify-content: space-between;
+    max-height: 480px;
+  }
+  .wrapHero {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero {
+    max-width: 300px;
+  }
+  .heroPictureContainer {
+    display: none;
+  }
+
+  .heroPictureWrap {
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bgroundPC {
+    max-width: 350px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .joinUs {
+    display: inline-block;
+    padding: 7px 20px;
+    white-space: nowrap;
+  }
+
+  .learnMore {
+    display: inline-block;
+    padding: 7px 20px;
+    white-space: nowrap;
+  }
+
+  .linkJoinUs {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .heroSection {
+    min-height: 680px;
+  }
+
+  .hero {
+    max-width: 570px;
+  }
+
+  .heroTitle {
+    font-size: 58px;
+  }
+
+  .text {
+    font-size: 22px;
+  }
+
+  .joinUs {
+    padding: 15px 40px;
+  }
+
+  .learnMore {
+    padding: 15px 40px;
+  }
+
+  .linkJoinUs {
+    font-size: 20px;
+  }
+
+  .heroPictureWrap {
+    max-width: 600px;
+  }
+
+    .bgroundPC {
+    max-width: 100%;
+    }
+}

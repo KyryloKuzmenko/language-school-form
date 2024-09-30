@@ -1,0 +1,93 @@
+/* Мобильные устройства */
+.wrap {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  color: #252b42;
+}
+
+.courseList {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.courseTitle {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: #252b42;
+}
+
+.line {
+  width: 50px;
+  height: 1.5px;
+  background: #e74040;
+  margin-top: 20px;
+}
+
+.text {
+  font-size: 14px;
+  text-align: center;
+  color: #737373;
+  margin-top: 20px;
+}
+
+.box {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  padding: 20px;
+}
+
+
+
+/* Планшеты */
+@media only screen and (min-width: 768px) {
+
+  .popularCoursesSection {
+  margin-top: 60px;
+  display: block; /* Убедись, что секция отображается как блок */
+}
+
+  .title {
+    font-size: 36px;
+  }
+
+  .courseList {
+    margin-top: 30px;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .box {
+    min-height: 300px;
+  }
+
+  .iconLang {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+/* Десктопы */
+@media only screen and (min-width: 1440px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .courseList {
+    gap: 50px;
+    justify-content: center;
+  }
+}
+

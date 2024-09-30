@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* Отключаем горизонтальный скролл */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+}
+
+img {
+  display: block;
+}
+
+.decor-wrap {
+  position: absolute;
+  z-index: -5;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.decor-right {
+  height: 125px;
+}
+
+.decor-left {
+  height: 90px;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .decor-right {
+    height: 250px;
+  }
+
+  .decor-left {
+    height: 180px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  .decor-left {
+    height: 180px;
+  }
+  .decor-right {
+    height: 250px;
+  }
+}

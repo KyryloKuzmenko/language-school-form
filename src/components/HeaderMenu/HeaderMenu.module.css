@@ -1,0 +1,114 @@
+.menu {
+  display: none;
+}
+
+.closeButton,
+.menuButton {
+    background: transparent;
+    width: 38px;
+    height: 38px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    stroke: #2E7D32;
+}
+
+
+.menuButton {
+  position: absolute;
+  top: 23px; /* Отступ от верха */
+  right: 16px; /* Отступ от левого края */
+  stroke: #2E7D32;
+}
+
+.closeButton {
+  position: absolute;
+  top: 23px;
+  right: 16px;
+}
+
+.menuOpenButtonSvg
+.closeModalIcon {
+    width: 28px;
+    height: 28px;
+    stroke: #2E7D32;
+    stroke-width: 2;
+}
+
+.closeModalIcon {
+  stroke: #FAF3E0;
+}
+
+.listLink {
+  font-weight: 700;
+font-size: 14px;
+line-height: 1.71429;
+letter-spacing: 0.01em;
+text-align: center;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #FAF3E0;
+}
+
+
+.hidenListItem:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+/* Стили для кнопки закрытия меню */
+.closeButton {
+  z-index: 1001;
+}
+
+/* Показывать меню, если оно открыто */
+.menu.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(90deg, #96bb7c, #a8d18d, #6d8a59); */
+  background: linear-gradient(
+    45deg,
+    rgba(150, 187, 124, 1),
+    rgba(150, 187, 124, 0.5)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Медиа-запросы для планшетов и компьютеров */
+@media (min-width: 768px) {
+  .menu {
+    display: block; /* Показывать меню по умолчанию на планшетах и компьютерах */
+  }
+
+  .list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .listLink {
+    color: #737373;
+    text-shadow: none;
+  }
+
+  .menuButton,
+  .closeButton {
+    display: none; /* Скрыть кнопки "Menu" и "X" на планшетах и компьютерах */
+  }
+}
+
+
+@media only screen and (min-width: 1440px) {
+  .list {
+    transform: translate(0);
+    gap: 50px;
+  }
+}

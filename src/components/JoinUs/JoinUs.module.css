@@ -1,0 +1,39 @@
+.joinUs {
+  display: none;
+}
+
+
+
+.contactFormBtn {
+  border-radius: 5px;
+  padding: 15px 25px;
+  width: 130px;
+  background: #96bb7c;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.57143;
+  letter-spacing: 0.01em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+
+
+.contactFormBtn:hover {
+  background-color: #7ea05f;
+}
+
+.contactFormBtn:active {
+  background-color: #6b8f4a; 
+}
+
+@media (min-width: 768px) {
+  .joinUs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
