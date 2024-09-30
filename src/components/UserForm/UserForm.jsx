@@ -101,7 +101,7 @@ const UserForm = () => {
               <Field
                 className={css.userNumber}
                 type="text"
-                name="number"
+                name="phone"
                 id="numberField"
               />
               {errors.number && touched.number ? (
