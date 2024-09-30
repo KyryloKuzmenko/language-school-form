@@ -46,7 +46,7 @@ const formSlice = createSlice({
   },
 });
 
-export const { hideForm } = formSlice.actions;
+export const { hideForm, showForm } = formSlice.actions;
 
 export default formSlice.reducer;
 
